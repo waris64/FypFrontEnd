@@ -57,10 +57,6 @@ const Main = () => {
         }
       });
       const data = axios.get('http://127.0.0.1:5000/predict');
-      useEffect=()=>{
-        console.log(data);
-      }
-
       const { confidence, prediction } = response.data;
 
       setDiseaseData({ confidence, prediction });
