@@ -1,0 +1,24 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.about{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.footer{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#bar{
+  height: 300px !important;
+  padding-top: 50px;
+  padding-bottom: -80px;
+  display: flex; 
+}
+
+
