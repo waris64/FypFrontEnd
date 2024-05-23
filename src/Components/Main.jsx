@@ -4,38 +4,16 @@ import rectangle from "../assets/Rectangle 11.png";
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { motion } from "framer-motion";
-import { BsCloudUploadFill } from "react-icons/bs";
+import { BsCartX, BsCloudUploadFill } from "react-icons/bs";
+import Chart from 'chart.js/auto';
 import { Bar } from "react-chartjs-2";
+import BarChart from '../Components/BarChart.jsx';
+import { ping } from 'ldrs'
 
 const Main = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [diseaseData, setDiseaseData] = useState(null);
-
-  const BarChart = () => {
-    const labels = [diseaseData.prediction];
-    const data = {
-      labels: labels,
-      datasets: [
-        {
-          label: "Citrus disease detection",
-          backgroundColor: "rgb(255, 99, 132)",
-          borderColor: "rgb(255, 99, 132)",
-          data: [parseInt(diseaseData.confidence), 100 - parseInt(diseaseData.confidence)],
-        },
-      ],
-    };
-
-    return (
-      <div className="chart-container">
-        {diseaseData && (
-          <Bar data={data} />
-        )}
-        {loading && <div>Loading...</div>}
-      </div>
-    );
-  };
-
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setImage(file);
@@ -56,7 +34,6 @@ const Main = () => {
           'Content-Type': 'multipart/form-data'
         }
       });
-      const data = axios.get('http://127.0.0.1:5000/predict');
       const { confidence, prediction } = response.data;
 
       setDiseaseData({ confidence, prediction });
@@ -64,11 +41,12 @@ const Main = () => {
       setLoading(false);
       toast.success('Data fetched successfully.');
     } catch (error) {
-      console.error('Error analyzing image:', error);
       setLoading(false);
       toast.error(error.message || 'An error occurred.');
     }
+    ping.register()
   };
+
 
   return (
     <div className="printable-content">
@@ -121,8 +99,16 @@ const Main = () => {
         </button>
       </div>
 
-      {/* Render the BarChart component here */}
-      <BarChart />
+      {/* Rendering  the BarChart component here */}
+      <span>{loading &&
+        <>
+          <l-ping
+            size="45"
+            speed="2"
+            color="orange"
+          ></l-ping></>}</span>
+      {diseaseData && <BarChart diseaseData={diseaseData} />}
+
 
     </div>
   );

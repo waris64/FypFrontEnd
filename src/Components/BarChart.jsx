@@ -1,71 +1,54 @@
-import React, { useEffect, useRef, useState } from "react";
-import Chart from "chart.js/auto";
-import { CategoryScale } from "chart.js";
+import React from "react";
 import axios from "axios";
+import Chart  from "chart.js/auto";
+import {Bar} from "react-chartjs-2"
 
-Chart.register(CategoryScale);
+const BarChart = ({ diseaseData }) => {
+    if (!diseaseData) {
+        return null;
+    }
 
-const BarChart = () => {
-    const chartRef = useRef(null);
-    const [chartData, setChartData] = useState(null);
-    const [predictionData, setPredictionData] = useState(null);
+    const labels = [diseaseData.prediction];
+    const confidence = parseInt(diseaseData.confidence);
 
-    useEffect(() => {
-        // Fetch data from the API
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("YOUR_API_ENDPOINT");
-                setPredictionData(response.data);
-            } catch (error) {
-                console.error("Error fetching prediction data:", error);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    useEffect(() => {
-        if (!predictionData) return;
-
-        // Update chart data with prediction
-        const updatedData = { ...chartData };
-        updatedData.datasets[0].label = `Prediction: ${predictionData.prediction}`;
-        updatedData.datasets[0].data = [parseFloat(predictionData.confidence)];
-
-        setChartData(updatedData);
-    }, [predictionData]);
-
-    useEffect(() => {
-        if (!chartData) return;
-
-        // Render chart
-        const ctx = chartRef.current.getContext("2d");
-        const myChart = new Chart(ctx, {
-            type: "bar",
-            data: chartData,
-            options: {
-                scales: {
-                    x: {
-                        type: "category",
-                    },
-                    y: {
-                        beginAtZero: true,
-                        suggestedMax: 100, // assuming confidence is in percentage
-                    },
-                },
+    const data = {
+        labels: labels,
+        datasets: [
+            {
+                label: diseaseData.prediction,
+                backgroundColor: "rgb(255, 99, 132)",
+                borderColor: "rgb(255, 99, 132)",
+                barThickness: 60,
+                data: [confidence],
             },
-        });
+            {
+                label: "Fresh",
+                backgroundColor: "rgb(255, 99, 32)",
+                borderColor: "rgb(255, 99, 132)",
+                barThickness: 60,
+                data: [100 - confidence],
+            },
+        ],
+    };
 
-        return () => {
-            myChart.destroy();
-        };
-    }, [chartData]);
+    const options = {
+        plugins: {
+            legend: {
+                display: true,
+                position: 'top',
+            },
+        },
+        
+        maintainAspectRatio: false
+    };
 
     return (
-        <div>
-            <canvas ref={chartRef} width="400" height="200"></canvas>
+        <div className="lg:w-1/2 w-2/4 m-auto">
+            <Bar data={data} options={options} />
         </div>
     );
 };
 
 export default BarChart;
+
+  
