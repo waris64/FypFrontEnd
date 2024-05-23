@@ -16,7 +16,7 @@ const History = () => {
         let user = JSON.parse(localStorage.getItem('user'))
         const userId = user.data.user._id
 
-        const response = await axios.get(`http://localhost:3000/api/records/getuserdata/${userId}`, {
+        const response = await axios.get(`https://fyp-back-end-tan.vercel.app/api/records/getuserdata/${userId}`, {
           headers: { 'Content-Type': 'application/json' }
         });
 
