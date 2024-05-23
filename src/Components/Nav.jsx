@@ -59,8 +59,8 @@ const Nav = ({ logoSrc }) => {
             style={{ x: 1 }}
             className="mb-2 md:mb-0 "
           >
-            <Link to="/" onClick={toggleMenu}>
-              <label>Home</label>
+            <Link to="/" >
+              Home
             </Link>
           </motion.li>
           <motion.li
@@ -69,7 +69,7 @@ const Nav = ({ logoSrc }) => {
             style={{ x: 1 }}
             className="mb-2 md:mb-0"
           >
-            <Link to="/diseases" onClick={toggleMenu}>
+            <Link to="/diseases">
               Diseases
             </Link>
           </motion.li>
@@ -79,7 +79,7 @@ const Nav = ({ logoSrc }) => {
             style={{ x: 1 }}
             className="mb-2 md:mb-0"
           >
-            <Link to="/contact" onClick={toggleMenu}>
+            <Link to="/contact">
               Contact
             </Link>
           </motion.li>
@@ -89,22 +89,22 @@ const Nav = ({ logoSrc }) => {
             style={{ x: 1 }}
             className="mb-2 md:mb-0"
           >
-            <Link to="/about" onClick={toggleMenu}>
+            <Link to="/about" >
               About
             </Link>
           </motion.li>
           <motion.li
             whileHover={{ scale: 0.8 }}
             style={{ y: 1 }}
-            className="mb-2 md:mb-0"
+
           >
             {isLoggedIn ? (
               <motion.li
-              whileHover={{ scale: 1.4 }}
-              whileTap={{ scale: 0.8 }}
-
-              style={{ x: 1 }}
-                className="mb-2 md:mb-0">
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1 }}
+                className="mb-2 md:mb-0"
+                style={{ x: 1 }}
+              >
                 <span onClick={toggleMenu} className="cursor-pointer  ">
                   <span className="lg:text-lg">{username}</span>
                 </span>
@@ -117,7 +117,7 @@ const Nav = ({ logoSrc }) => {
                       Logout
                     </Link>
                     <br />
-                    <Link to="/history"  className="">
+                    <Link to="/history" className="">
                       History
                     </Link>
                   </li>

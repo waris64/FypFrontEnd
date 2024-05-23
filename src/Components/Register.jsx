@@ -143,10 +143,7 @@ const Register = () => {
                         W E L C O M E <span className='text-orange-500 animate-'>TO</span> THE CITRUS DISEASE <span className='text-orange-500 animate-pulse duration-50'>DETECTION</span> SYSTEM
                     </h1>
                     <p className='text-center leading-6'>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's
-                        standard dummy text ever since the when an unknown printer
-                        took a galley of type and scrambled it to make a type
+                        Welcome to our Citrus Disease Prediction System! Signing up opens the door to a transformative journey in citrus farming. By registering, you gain access to cutting-edge technology that predicts and mitigates diseases affecting citrus crops.Let's cultivate a future of resilience and abundance together!
                     </p>
                 </div>
 

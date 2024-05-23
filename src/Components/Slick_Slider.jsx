@@ -18,14 +18,44 @@ function SimpleSlider() {
     speed: 1000,
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
-  };
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true
+        }
+      }
+    ]
+
+  }
 
   return (
-    <div className="slider-container">
-      <h1 className="text-4xl text-center p-5 ">Citrus Diseases <span className="text-orange-400">Which</span>  Are Affecting The Most</h1>
-      <Slider {...settings} className="pt-4 cursor-pointer">
+    <div className="slider-container px-9">
+      <h1 className="text-xl lg:text-2xl text-center p-5 font-semibold">Citrus Diseases <span className="text-orange-400 font-bold">Which</span>  Are Affecting The Most</h1>
+      <Slider {...settings} className="py-2 cursor-pointer">
         <div className="">
-          <div className="slide-item relative px-1">
+          <div className="slide-item relative px-2">
             <div className="image-container">
               <div className=" h-52">
                 <img
@@ -36,7 +66,8 @@ function SimpleSlider() {
               </div>
               <div className="text-overlay absolute inset-0 flex items-center ">
                 <div className="md:max-w-[978px] md:mx-auto m-auto">
-                  <h1 className="text-white font-bold pt-32 text-2xl underline">Citrus <label htmlFor="color" className="text-orange-500">Canker</label> </h1>
+                  <h1 className="text-white font-bold pt-32 text-2xl underline">Citrus  <label htmlFor="color" className="text-orange-500">Canker</label> </h1>
+                  
                 </div>
               </div>
             </div>

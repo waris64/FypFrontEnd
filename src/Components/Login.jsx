@@ -46,7 +46,6 @@ const Login = () => {
                 data-theme='light'
                 className='lg:flex lg:p-4 lg:justify-between lg:gap-x-6 min-h-screen adjust'
             >
-
                 <div className='bg-white hidden lg:flex lg:flex-col lg:justify-center lg:w-screen lg:p-16 lg:items-center '>
                     <h1 className='font-bold lg:text-3xl lg:pb-5 text-center'>
                         W E L C O M E <span className='text-orange-500 animate-'>TO</span> THE CITRUS DISEASE <span className='text-orange-500 animate-pulse duration-50'>DETECTION</span> SYSTEM

@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import rectangle from "../assets/Rectangle 10.png";
-
 import Nav from './Nav';
 import Sidebar from './Sidebar';
-
+import moment from 'moment';
+moment().format();
 
 const History = () => {
   const [history, setHistory] = useState([]);
-
   useEffect(() => {
     const getDetails = async () => {
       try {
@@ -21,12 +20,11 @@ const History = () => {
         });
 
         if (response.status === 200) {
-          setHistory(response.data.data);
+          setHistory(response.data.data.reverse());
         }
 
       } catch (error) {
-        console.log(error);
-        toast.error(error.response.data.data);
+        toast.error("Error occured ", error.response.data.data);
       }
     };
 
@@ -38,13 +36,14 @@ const History = () => {
 
       <Nav logoSrc={rectangle} />
       <Sidebar />
-      <h1 className='text-center font-semibold text-4xl py-6 px-4'>History </h1>
-      <div className='flex  lg:gap-3 lg:flex-wrap md:flex-col  gap-y-2  lg:px-2 px-8 md:px-6  flex-col lg:flex-row '>
+      <h1 className='text-center font-semibold text-xl lg:text-4xl lg:py-4 py-4 '>History </h1>
+      <div className='flex   lg:flex-wrap  lg:py-4 lg:px-6  flex-col lg:flex-col   '>
         {history.map((item, index) => (
-          <div key={index} className="flex flex-wrap flex-col text-center py-10  gap-y-4 text-gray-100 rounded md:px-4   lg:text-xl border  shadow-3xl  lg:font-semibold  bg-gradient-to-t from-orange-400 to-orange-500">
-            {/* <p>User ID: {item.index}</p> */}
-            <p>Disease Prediction: {item.diseasePrediction}</p>
-            <p>Disease Confidence:{item.diseaseConfidence}</p>
+          <div key={index} className="flex text-sm px-1 md:px-4 py-0.5 lg:py-0.5 items-center  justify-between    text-gray-100 rounded lg:px-4   lg:text-lg border  shadow-3xl  lg:font-semibold  bg-gradient-to-t from-orange-400 to-orange-500">
+            <p >Disease Prediction: {item.diseasePrediction}</p>
+            <p className='pr-3 lg:pr-0'>Disease Confidence:{item.diseaseConfidence} </p>
+            <p>Date: {moment(item.createdAt).format('MMM DD, YYYY, h:mm A')}</p>
+
           </div>
         ))}
       </div>

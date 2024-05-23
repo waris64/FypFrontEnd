@@ -29,7 +29,7 @@ const Diseases = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="font-bold text-xl pt-7 md:text-4xl mb-4">
+          <h1 className="font-bold text-xl pt-14 lg:text-2xl mb-4">
             <label className="text-orange-500 ">Citrus </label>Canker
           </h1>
           <p className="md:text-base md:leading-loose text-justify">
@@ -59,7 +59,7 @@ const Diseases = () => {
         transition={{ duration: 1 }}
       >
         <div>
-          <h1 className="font-bold text-xl md:text-4xl mb-4 ">
+          <h1 className="font-bold text-xl md:text-2xl mb-4 ">
             Citrus <span className="text-orange-500">Greening</span>
           </h1>
           <img src={Rec19} className="h-72 sm:p-4 p-4" alt="" />
@@ -85,7 +85,7 @@ const Diseases = () => {
         transition={{ duration: 1 }}
       >
         <div className="w-full md:w-1/2 md:pl-8">
-          <h1 className="font-bold text-xl md:text-4xl mb-4">
+          <h1 className="font-bold text-xl md:text-2xl mb-4">
             Citrus{" "}
             <span className="md:text-orange-500 text-orange-500">Scab</span>{" "}
           </h1>
@@ -115,7 +115,7 @@ const Diseases = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           animate={{ duration: 1 }}
         >
-          <h1 className="font-bold text-xl md:text-4xl mb-4">
+          <h1 className="font-bold text-xl md:text-2xl mb-4">
             Citrus{" "}
             <span className="md:text-orange-500 text-orange-500">Tristeza</span>{" "}
             Virus
