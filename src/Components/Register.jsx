@@ -33,6 +33,11 @@ const Register = () => {
             })
             const data = await res.json()
             if (data.success === false) {
+                if(data.message==="Username is Already taken"){
+                    toast.error=("data.message")
+                }else{
+                    setErrorMessage(data.message)
+                }
                 return setErrorMessage(data.message)
             }
             if (!res.ok) {
