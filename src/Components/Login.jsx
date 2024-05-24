@@ -29,7 +29,6 @@ const Login = () => {
             if (res.status === 200) {
                 const userData = JSON.stringify(data);
                 localStorage.setItem('user', userData);
-                toast.success(`Welcome, ${username}!`);
                 navigate('/');
             } else {
                 toast.error("Invalid Credentials");
