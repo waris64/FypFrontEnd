@@ -54,14 +54,13 @@ const Login = () => {
 
 
             <div
-                data-theme='light'
-                className='lg:flex lg:p-4 lg:justify-between lg:gap-x-6 min-h-screen adjust'
+                className='mt-14 px-4 py-4 text-sm  md:m-auto md:text-lg lg:flex lg:p-4 lg:justify-between lg:gap-x-6  xl:px-10'
             >
 
-                <div className='bg-white hidden lg:flex lg:flex-col lg:justify-center lg:w-screen lg:p-16 lg:items-center '>
+                <div className='bg-white hidden lg:flex lg:flex-col lg:justify-center lg:w-screen lg:p-16 lg:items-center 2xl:w-full'>
 
                     <h1 className='font-bold lg:text-3xl lg:pb-5 text-center'>
-                        W E L C O M E <span className='text-orange-500 animate-'>TO</span> THE CITRUS DISEASE <span className='text-orange-500 animate-pulse duration-50'>DETECTION</span> SYSTEM
+                        W E L C O M E <span className='text-orange-500 animate-'>TO</span> THE CITRUS DISEASE <span className='text-orange-500 animate-pulse '>DETECTION   SYSTEM</span>
                     </h1>
                     <p className='text-center leading-6'>
                         Lorem Ipsum is simply dummy text of the printing and
@@ -70,20 +69,13 @@ const Login = () => {
                         took a galley of type and scrambled it to make a type
                     </p>
                 </div>
-                <div className='lg:w-3/2 p-3 w-full lg:bg-white  bg-contain md:flex md:justify-center md:items-center relative'>
+                   
                     <div
-                        className='absolute  md:-top-10 -left-10 lg:-top-[15px] '
-                        style={{ zIndex: 10 }}
+                        className={`flex flex-col pt-4 px-4 md:w-3/5 md:items-center md:m-auto  md:pt-14  lg:py-7  lg:px-16  lg:w-2/3  justify-center rounded-3xl bg-[rgb(255,127,62)]`}
                     >
-                        <img src={back} className='hidden lg:block' alt="Background" />
-                    </div>
-                    <div
-                        className={`md:w-96 md:mt-24 px-5 py-12 bg-white  flex flex-col justify-center rounded-3xl lg:min-h-full lg:mt-16`}
-                        style={{ zIndex: 10 }}
-                    >
-                        <img src={Logo} className='m-auto' alt="Logo" />
-                        <p className='m-auto font-bold text-lg lg:pt-7 lg:-mt-9'>
-                            Sign Into <span className='text-orange-500'>Your</span> Account
+                        <img src={Logo} className='m-auto rounded-md' alt="Logo" />
+                        <p className='m-auto font-bold text-lg pt-5 lg:pt-7 '>
+                            Sign Into Your Account
                         </p>
 
                         <form className='flex flex-col py-9 font-semibold' onSubmit={handleSubmit}>
@@ -95,26 +87,26 @@ const Login = () => {
                                     name='username'
                                     placeholder='E-mail'
                                     id='email'
-                                    className='w-full pl-12 pr-4 py-3 rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive'
+                                    className='w-full pl-12 pr-4 2xl:px-52 2xl:pl-10  py-3 rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive'
                                     onChange={handleChange}
                                 />
-                                <div className='absolute inset-y-0 left-0 pr-3 flex items-center pointer-events-none'>
+                                <div className='absolute inset-y-0 flex items-center pointer-events-none'>
                                     <div className='bg-darkorange h-full flex items-center px-2'>
                                         <MdEmail className='size-6 rounded text-orange-500' />
                                     </div>
                                 </div>
                             </div>
-                            <label htmlFor='password' className='mt-5'>
+                            <label htmlFor='password' className='pt-5 '>
                                 Password:
                             </label>
-                            <div className='relative mt-2'>
+                            <div className='relative pt-2'>
                                 <input
                                     required
                                     type='password'
                                     name='password'
                                     id='password'
                                     placeholder='Password'
-                                    className='w-full pl-12 pr-4 py-3 rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive'
+                                    className='w-full pl-12  py-4  rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive  '
                                     onChange={handleChange}
                                 />
                                 <div className='absolute inset-y-0 left-0 pr-3 flex items-center pointer-events-none'>
@@ -125,13 +117,11 @@ const Login = () => {
                             </div>
                             <button
                                 type='submit'
-                                className='flex items-center justify-center m-auto  w-52 rounded-xl py-3 mt-5 border-2 hover:bg-orange-500 duration-500'
+                                className='flex items-center justify-center font-semibold m-auto  w-52 rounded-xl py-3 mt-5 border-2 hover:bg-orange-500 duration-500'
                             >
                                 Log In
                             </button>
-                            <Link to={'/register'} className='text-center pt-3 text-blue-900 font-semibold text-sm'>SignUp <span className='text-orange-500'>here</span>  </Link>
-
-                            {/* Loading transition effect  */}
+                            <Link to={'/register'} className='text-center pt-2 font-bold text-sm md:text-lg md:font-semibold'>SignUp <span className='text-white underline'>here</span>  </Link>
 
                             <span className='text-center pt-5'>{ loading && 
                                 <>
@@ -144,7 +134,7 @@ const Login = () => {
                             }</span>
                         </form>
                     </div>
-                </div>
+               
             </div>
 
         </>
