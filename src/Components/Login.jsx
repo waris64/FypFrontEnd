@@ -1,51 +1,65 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdEmail, MdLock } from 'react-icons/md';
 import Logo from '../assets/Rectangle 10.png';
 import back from '../assets/back.jpeg';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from "react-hot-toast";
+import { spiral} from 'ldrs';
+spiral.register();
 
 const Login = () => {
-    const [formData, setFormData] = useState({})
+    const [formData, setFormData] = useState({});
+    const [loading, setLoading] = useState(false);
+
     const navigate = useNavigate()
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value.trim() })
     }
-    
+
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
         if (!formData.email || !formData.password) {
             return toast.error("Please fill all the fields");
         }
+        setLoading(true);
         try {
             const res = await fetch('https://fyp-back-end-tan.vercel.app/api/auth/signin', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
             })
+            setLoading(false);
             const data = await res.json()
             if (res.status === 200) {
                 const userData = JSON.stringify(data);
                 localStorage.setItem('user', userData);
                 navigate('/');
+
             } else {
                 toast.error("Invalid Credentials");
             }
         } catch (error) {
-            console.log(error);
             toast.error("Invalid Credentials")
+        }
+        finally {
+            setLoading(false);
         }
     }
 
     return (
         <>
+
+
             <div
                 data-theme='light'
                 className='lg:flex lg:p-4 lg:justify-between lg:gap-x-6 min-h-screen adjust'
             >
+
                 <div className='bg-white hidden lg:flex lg:flex-col lg:justify-center lg:w-screen lg:p-16 lg:items-center '>
+
                     <h1 className='font-bold lg:text-3xl lg:pb-5 text-center'>
                         W E L C O M E <span className='text-orange-500 animate-'>TO</span> THE CITRUS DISEASE <span className='text-orange-500 animate-pulse duration-50'>DETECTION</span> SYSTEM
                     </h1>
@@ -116,10 +130,23 @@ const Login = () => {
                                 Log In
                             </button>
                             <Link to={'/register'} className='text-center pt-3 text-blue-900 font-semibold text-sm'>SignUp <span className='text-orange-500'>here</span>  </Link>
+
+                            {/* Loading transition effect  */}
+
+                            <span className='text-center pt-5'>{ loading && 
+                                <>
+                                    <l-spiral
+                                        size="45"
+                                        speed=".7"
+                                        color="#fe8400"
+                                    ></l-spiral>
+                                </>
+                            }</span>
                         </form>
                     </div>
                 </div>
             </div>
+
         </>
     );
 };

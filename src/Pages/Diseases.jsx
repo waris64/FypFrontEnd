@@ -18,10 +18,6 @@ const Diseases = () => {
       <Nav logoSrc={Rectangle} />
       <Slick_Slider className="h-[9rem]" />
       <Sidebar className="fixed" />
-      {/* <div className=' md:flex md:text-center md:bg-cover md:bg-no-repeat md:text-3xl md:text-white h-[9rem] md:h-[15rem]' style={{ backgroundImage: `url('${DiseaseImg}')` }}>
-        <h1 className='md:mt-20 md:text-[8vh] text-3xl pt-10 text-center text-white md:m-auto m-auto md:leading-10'>Citrus Diseases </h1>
-      </div> */}
-
       <section className="flex flex-col md:flex-row md:justify-around md:items-center md:py-8 p-4 lg:pt-16 lg:items-center -mt-10">
         <motion.div
           className="w-full md:w-1/2 md:pl-8"
@@ -124,7 +120,7 @@ const Diseases = () => {
         </div>
         <div className="w-full md:w-1/2 md:pl-8">
           <p className="md:text-base md:leading-loose  md:pt-8 ">
-          Citrus Scab, caused by the fungus Elsinoë fawcettii, is a prevalent
+            Citrus Scab, caused by the fungus Elsinoë fawcettii, is a prevalent
             and destructive disease affecting citrus crops worldwide. This
             pathogen primarily targets various citrus species, including
             oranges, lemons, and grapefruits, posing a significant threat to

@@ -79,16 +79,6 @@ const Nav = ({ logoSrc }) => {
             style={{ x: 1 }}
             className="mb-2 md:mb-0"
           >
-            <Link to="/contact">
-              Contact
-            </Link>
-          </motion.li>
-          <motion.li
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.8 }}
-            style={{ x: 1 }}
-            className="mb-2 md:mb-0"
-          >
             <Link to="/about" >
               About
             </Link>

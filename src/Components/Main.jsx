@@ -8,8 +8,8 @@ import { BsCartX, BsCloudUploadFill } from "react-icons/bs";
 import Chart from 'chart.js/auto';
 import { Bar } from "react-chartjs-2";
 import BarChart from '../Components/BarChart.jsx';
-import { ping } from 'ldrs'
-
+import { spiral } from 'ldrs'
+spiral.register()
 const Main = () => {
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -44,7 +44,6 @@ const Main = () => {
       setLoading(false);
       toast.error(error.message || 'An error occurred.');
     }
-    ping.register()
   };
 
 
@@ -100,13 +99,14 @@ const Main = () => {
       </div>
 
       {/* Rendering  the BarChart component here */}
-      <span>{loading &&
+      <span className="flex justify-center items-center">{loading &&
         <>
-          <l-ping
-            size="45"
-            speed="2"
-            color="orange"
-          ></l-ping></>}</span>
+          <l-spiral
+            size="55"
+            speed=".5"
+            color="#f97316"
+
+          ></l-spiral></>}</span>
       {diseaseData && <BarChart diseaseData={diseaseData} />}
 
 
