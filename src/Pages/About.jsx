@@ -2,13 +2,15 @@ import React from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Rectangle from "../assets/Rectangle 10.png";
-import Profile from "../assets/profile.jpeg";
+import Ali from "../assets/ali.png";
+import Mubeen from "../assets/mubeen.jpg";
+import Waris from "../assets/waris.jpg";
 import Sidebar from "../Components/Sidebar";
 import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className="p-7 md:p-0 about overflow-hidden">
+    <div className="p-7 md:p-0 about overflow-hidden 2xl:bg-red-50 2xl:py-7 2xl:leading-loose ">
       <Nav logoSrc={Rectangle} />
       <Sidebar className="bg-red-400" />
       <motion.div
@@ -17,8 +19,8 @@ const About = () => {
         animate={{ opacity: 1, x: 0, duration: 2 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="md:text-3xl tablet:pt-6 text-xl font-bold border-b-4 border-orange-500">About Us</h1>
-        <p className="text-justify md:pt-8  pt-5 md:text-xl ">
+        <h1 className="md:text-3xl text-xl font-bold border-b-4 border-orange-500 lg:pt-8 2xl:pt-24 2xl:text-8xl">About Us</h1>
+        <p className="text-justify md:pt-8  pt-5 md:text-xl 2xl:pt-20 2xl:text-2xl 2xl:leading-loose 2xl:font-semibold">
           We are passionate about empowering citrus growers with the power of
           artificial intelligence. Our team of agricultural experts and AI
           enthusiasts have come together to develop a user-friendly web
@@ -31,43 +33,43 @@ const About = () => {
         </p>
       </motion.div>
       <motion.div
-        className="md:mb-5 mb-5 mt-5  bg-gray-300 md:h-44 h-36 pb-2 flex flex-col justify-center md:w-[50vw] md:mt-16 md:pb-4 md:m-auto"
+        className="md:pb-5 pb-5 pt-5 2xl:mb-[40vh] 2xl:h-[20vh] rounded   bg-gray-300 md:h-44 h-36  flex flex-col justify-center md:w-[50vw] md:mt-16  md:m-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, duration: 2 }}
         transition={{ type: "tween" }}
       >
-        <h1 className="md:m-auto m-auto md:text-4xl tablet:text-3xl text-2xl border-b-4 border-orange-500">Team Members</h1>
-        <div className="flex gap-9 justify-center">
+        <h1 className="md:m-auto m-auto md:text-4xl  text-2xl border-b-4 border-orange-500 2xl:font-semibold 2xl:text-6xl">Team Members</h1>
+        <div className="flex gap justify-around py-2  px-4  2xl:pb-4 2xl:py-10 ">
           <motion.img
-            src={Profile}
+            src={Mubeen}
             alt="Profile 1"
-            className="size-14 rounded-full"
+            className="size-14  2xl:size-44  rounded-full"
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             animate={{ duration: 1.2 }}
             transition={{ type: "tween", duration: 1, delay: 0 }}
           />
           <motion.img
-            src={Profile}
+            src={Waris}
             alt="Profile 1"
-            className="size-14 rounded-full"
+            className="size-14 2xl:size-44 rounded-full"
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             animate={{ duration: 1.2 }}
             transition={{ type: "tween", duration: 1, delay: 0.3 }}
           />
           <motion.img
-            src={Profile}
+            src={Ali}
             alt="Profile 1"
-            className="size-14 rounded-full"
+            className="size-14  2xl:size-44  rounded-full"
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
             animate={{ duration: 1.2 }}
-            transition={{ type: "tween", duration: 1, delay: 0.5 }} // Delay for the third image
+            transition={{ type: "tween", duration: 1, delay: 0.5 }} 
           />
         </div>
       </motion.div>
-      <Footer className="w-1"/>
+      <Footer className="w-1 ]"/>
       <Sidebar />
     </div>
   );

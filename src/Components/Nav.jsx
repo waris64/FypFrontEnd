@@ -32,11 +32,11 @@ const Nav = ({ logoSrc }) => {
     localStorage.removeItem('user');
     setIsLoggedIn(false);
     setUsername('');
-    setIsOpen(false); // Close menu after logout
+    setIsOpen(false); 
   };
 
   return (
-    <div className="md:flex md:flex-row  md:justify-start md:items-center lg:items-center  md:text-white    bg-green-950 md:py-5  relative">
+    <div className="flex justify-center bg-green-950   relative  md:py-5  md:flex-row  md:justify-around md:text-white lg:items-center lg:justify-start ">
       <motion.img
         animate={{ rotate: 360 }}
         transition={{ repeat: 2, duration: 2, repeatDelay: 1 }}
@@ -46,8 +46,8 @@ const Nav = ({ logoSrc }) => {
       />
       <div
         className={`${isOpen ? "block" : "hidden"
-          } md:flex md:mx-[60%]  lg:mx-[50%] md:items-center  right-[3vw] bg-green-950 w-full`}
-      >
+          } relative md:flex  md:left-64 lg:left-[50vw] 2xl:left-[75vw]`}
+          >
         <motion.ul
           initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0 }}
