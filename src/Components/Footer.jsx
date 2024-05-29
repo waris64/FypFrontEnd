@@ -41,9 +41,9 @@ const Footer = () => {
           Email: Citrus@gmail.com
         </label>
         <div className='flex justify-between w-1/2 md:w-3/5 lg:w-full lg:justify-around '>
-          <img src={facebook} alt=""   className='size-5 lg:size-7'/>
-          <img src={instagram} alt=""  className='size-5 lg:size-8'/>
-          <img src={linkedin} alt=""  className='size-5 lg:size-8'/>
+          <img src={facebook}  loading={lazy} alt=""   className='size-5 lg:size-7'/>
+          <img src={instagram} loading={lazy} alt=""  className='size-5 lg:size-8'/>
+          <img src={linkedin} loading={lazy} alt=""  className='size-5 lg:size-8'/>
         </div>
       </motion.div>
     </div>

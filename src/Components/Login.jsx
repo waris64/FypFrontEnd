@@ -4,7 +4,7 @@ import Logo from '../assets/Rectangle 10.png';
 import back from '../assets/back.jpeg';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from "react-hot-toast";
-import { spiral} from 'ldrs';
+import { spiral } from 'ldrs';
 spiral.register();
 
 const Login = () => {
@@ -69,72 +69,72 @@ const Login = () => {
                         took a galley of type and scrambled it to make a type
                     </p>
                 </div>
-                   
-                    <div
-                        className={`flex flex-col pt-4 px-4 md:w-3/5 md:items-center md:m-auto  md:pt-14  lg:py-7  lg:px-16  lg:w-2/3  justify-center rounded-3xl bg-[rgb(255,127,62)]`}
-                    >
-                        <img src={Logo} className='m-auto rounded-md' alt="Logo" />
-                        <p className='m-auto font-bold text-lg pt-5 lg:pt-7 '>
-                            Sign Into Your Account
-                        </p>
 
-                        <form className='flex flex-col py-9 font-semibold' onSubmit={handleSubmit}>
-                            <label htmlFor='email'>Email:</label>
-                            <div className='relative mt-2'>
-                                <input
-                                    required
-                                    type='email'
-                                    name='username'
-                                    placeholder='E-mail'
-                                    id='email'
-                                    className='w-full pl-12 pr-4 2xl:px-52 2xl:pl-10  py-3 rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive'
-                                    onChange={handleChange}
-                                />
-                                <div className='absolute inset-y-0 flex items-center pointer-events-none'>
-                                    <div className='bg-darkorange h-full flex items-center px-2'>
-                                        <MdEmail className='size-6 rounded text-orange-500' />
-                                    </div>
+                <div
+                    className={`flex flex-col pt-4 px-4 md:w-3/5 md:items-center md:m-auto  md:pt-14  lg:py-5  lg:px-16  lg:w-2/3  justify-center rounded-3xl bg-[rgb(255,127,62)]`}
+                >
+                    <img src={Logo} loading={lazy} className='m-auto rounded-md' alt="Logo" />
+                    <p className='m-auto font-bold text-lg pt-5 lg:pt-7 '>
+                        Sign Into Your Account
+                    </p>
+
+                    <form className='flex flex-col py-9 font-semibold' onSubmit={handleSubmit}>
+                        <label htmlFor='email'>Email:</label>
+                        <div className='relative mt-2'>
+                            <input
+                                required
+                                type='email'
+                                name='username'
+                                placeholder='E-mail'
+                                id='email'
+                                className='w-full pl-12 pr-4 2xl:px-52 2xl:pl-10  py-3 rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive'
+                                onChange={handleChange}
+                            />
+                            <div className='absolute inset-y-0 flex items-center pointer-events-none'>
+                                <div className='bg-darkorange h-full flex items-center px-2'>
+                                    <MdEmail className='size-6 rounded text-orange-500' />
                                 </div>
                             </div>
-                            <label htmlFor='password' className='pt-5 '>
-                                Password:
-                            </label>
-                            <div className='relative pt-2'>
-                                <input
-                                    required
-                                    type='password'
-                                    name='password'
-                                    id='password'
-                                    placeholder='Password'
-                                    className='w-full pl-12  py-4  rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive  '
-                                    onChange={handleChange}
-                                />
-                                <div className='absolute inset-y-0 left-0 pr-3 flex items-center pointer-events-none'>
-                                    <div className='bg-darkorange h-full flex items-center px-2.5'>
-                                        <MdLock className='text-orange-500 size-6 rounded' />
-                                    </div>
+                        </div>
+                        <label htmlFor='password' className='pt-5 '>
+                            Password:
+                        </label>
+                        <div className='relative pt-2'>
+                            <input
+                                required
+                                type='password'
+                                name='password'
+                                id='password'
+                                placeholder='Password'
+                                className='w-full pl-12  py-4  rounded-lg bg-[#F5F5F7] focus:outline-none focus:ring-0 focus:border-textActive  '
+                                onChange={handleChange}
+                            />
+                            <div className='absolute inset-y-0 left-0 pr-3 flex items-center pointer-events-none'>
+                                <div className='bg-darkorange h-full flex items-center px-2.5'>
+                                    <MdLock className='text-orange-500 size-6 rounded' />
                                 </div>
                             </div>
-                            <button
-                                type='submit'
-                                className='flex items-center justify-center font-semibold m-auto  w-52 rounded-xl py-3 mt-5 border-2 hover:bg-orange-500 duration-500'
-                            >
-                                Log In
-                            </button>
-                            <Link to={'/register'} className='text-center pt-2 font-bold text-sm md:text-lg md:font-semibold'>SignUp <span className='text-white underline'>here</span>  </Link>
+                        </div>
+                        <button
+                            type='submit'
+                            className='flex items-center justify-center font-semibold m-auto  w-52 rounded-xl py-3 mt-5 border-2 hover:bg-orange-500 duration-500'
+                        >
+                            Log In
+                        </button>
+                        <Link to={'/register'} className='text-center pt-2 font-bold text-sm md:text-lg md:font-semibold'>SignUp <span className='text-white underline'>here</span>  </Link>
 
-                            <span className='text-center pt-5'>{ loading && 
-                                <>
-                                    <l-spiral
-                                        size="45"
-                                        speed=".7"
-                                        color="#fe8400"
-                                    ></l-spiral>
-                                </>
-                            }</span>
-                        </form>
-                    </div>
-               
+                        <span className='text-center pt-5'>{loading &&
+                            <>
+                                <l-spiral
+                                    size="45"
+                                    speed=".7"
+                                    color="#fe8400"
+                                ></l-spiral>
+                            </>
+                        }</span>
+                    </form>
+                </div>
+
             </div>
 
         </>

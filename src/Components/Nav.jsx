@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/Rectangle 10.png";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -40,7 +40,7 @@ const Nav = ({ logoSrc }) => {
       <motion.img
         animate={{ rotate: 360 }}
         transition={{ repeat: 2, duration: 2, repeatDelay: 1 }}
-        src={logoSrc}
+        src={logoSrc} loading={lazy}
         className="w-12 h-12 absolute top-2 left-2 hidden md:inline"
         alt=""
       />

@@ -8,7 +8,8 @@ import { BsCartX, BsCloudUploadFill } from "react-icons/bs";
 import Chart from 'chart.js/auto';
 import { Bar } from "react-chartjs-2";
 import BarChart from '../Components/BarChart.jsx';
-import { spiral } from 'ldrs'
+import { spiral } from 'ldrs';
+import { lazy } from "react";
 spiral.register()
 const Main = () => {
   const [image, setImage] = useState(null);
@@ -63,7 +64,7 @@ const Main = () => {
 
       <section className="flex flex-col md:flex-row md:justify-around md:items-center md:py-8 overflow-hidden p-7 z-auto">
         <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-          <img src={rectangle} className="w-82 p-6 md:w-80" alt="Rectangle" />
+          <img src={rectangle} loading={lazy} className="w-82 p-6 md:w-80" alt="Rectangle" />
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 100 }} whileInView={{ opacity: 1, x: 1 }} transition={{ duration: 1 }}
           className="w-full md:w-1/2 md:pl-8 flex-wrap ">

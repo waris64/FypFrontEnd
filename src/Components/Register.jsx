@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import { MdEmail, MdLock } from 'react-icons/md';
 import Logo from '../assets/Rectangle 10.png';
 import admin from '../assets/bgadmin.png';
@@ -57,19 +57,19 @@ const Register = () => {
     return (
         <>
             <div
-                className='lg:flex lg:p-4 lg:justify-between lg:gap-x-6 min-h-screen '
+                className='lg:flex lg:p-4 lg:justify-between   '
             >
-                <div className='relative lg:w-3/2 p-3 w-full   bg-contain md:flex md:justify-center md:items-center lg:min-h-full '>
+                <div className='relative lg:w-3/5 p-3 w-full   bg-contain md:flex md:justify-center md:items-center  '>
                     <div
-                        className={`flex flex-col justify-center rounded-3xl text-sm px-5  py-12  shadow-2xl border   bg-[rgb(255,127,62)] md:w-96 md:mt-24 lg:min-h-full lg:pt-16 lg:w-full  lg:text-xl 2xl:w-full 2xl:py-0 2xl:px-44`}
+                        className={`flex flex-col justify-center rounded-3xl text-sm px-5  py-12  shadow-2xl border   bg-[rgb(255,127,62)] md:w-96  lg:w-full  lg:text-xl 2xl:w-full 2xl:py-0 2xl:px-44`}
                      
                     >
-                        <img src={Logo} className='m-auto rounded-xl pb-7 md:pb-0 lg:pb-0 2xl:pb-0 2xl:size-44' alt="Logo" />
-                        <p className='m-auto font-bold md:text-sm md:pt-5  -lg:pt-64 2xl:-pt-96  2xl:text-5xl lg:text-2xl'>
+                        <img src={Logo} loading={lazy} className='m-auto rounded-xl pb-7 md:pb-0 lg:pb-0 2xl:pb-0 2xl:size-44' alt="Logo" />
+                        <p className='m-auto font-bold md:text-sm md:pt-5  2xl:-pt-96  2xl:text-5xl lg:text-xl'>
                             Sign Up <span className='text-white '>Here</span>
                         </p>
 
-                        <form className='flex flex-col py-9  font-semibold  gap-y-4 md:text-sm  lg:text-2xl 2xl:gap-y-10 2xl:text-5xl  ' onSubmit={handleSubmit}>
+                        <form className='flex flex-col py-9  font-semibold  gap-y-3 md:text-sm  lg:text-lg 2xl:gap-y-8 2xl:text-5xl  ' onSubmit={handleSubmit}>
                             <label htmlFor='name'>Name:</label>
                             <div className='relative'>
                                 <input
@@ -78,7 +78,7 @@ const Register = () => {
                                     name='username'
                                     placeholder='Name'
                                     id='username'
-                                    className='w-full pl-12 pr-4 py-3 rounded-lg  bg-[#F5F5F7] 2xl:px-24 focus:outline-none focus:ring-0 focus:border-textActive'
+                                    className='w-full pl-12 pr-4 py-2 rounded-lg  bg-[#F5F5F7] 2xl:px-24 focus:outline-none focus:ring-0 focus:border-textActive'
                                     onChange={handleChange}
                                 />
                                 <div className='absolute inset-y-0 left-0 pr-3 flex items-center pointer-events-none'>
@@ -95,7 +95,7 @@ const Register = () => {
                                     name='email'
                                     placeholder='E-mail'
                                     id='email'
-                                    className='w-full pl-12 pr-4 py-3 rounded-lg bg-[#F5F5F7]   2xl:px-24 focus:outline-none focus:ring-0 focus:border-textActive'
+                                    className='w-full pl-12 pr-4 py-2 rounded-lg bg-[#F5F5F7]   2xl:px-24 focus:outline-none focus:ring-0 focus:border-textActive'
                                     onChange={handleChange}
                                 />
                                 <div className='absolute inset-y-0 left-0 pr-3 flex items-center pointer-events-none'>
@@ -105,17 +105,17 @@ const Register = () => {
                                 </div>
                             </div>
 
-                            <label htmlFor='password' className='mt-5'>
+                            <label htmlFor='password' className=''>
                                 Password:
                             </label>
-                            <div className='relative mt-2'>
+                            <div className='relative '>
                                 <input
                                     required
                                     type='password'
                                     name='password'
                                     placeholder='Password'
                                     id='password'
-                                    className='w-full pl-12 pr-4 py-3 rounded-lg bg-[#F5F5F7] 2xl:px-24 focus:outline-none focus:ring-0 focus:border-textActive'
+                                    className='w-full pl-12 pr-4 py-2 rounded-lg bg-[#F5F5F7] 2xl:px-24 focus:outline-none focus:ring-0 focus:border-textActive'
                                     onChange={handleChange}
                                 />
                                 <div className='absolute inset-y-0 left-0 pr-3 flex items-center pointer-events-none'>
@@ -126,12 +126,12 @@ const Register = () => {
                             </div>
                             <button
                                 type='submit'
-                                className='flex items-center justify-center m-auto  w-52 rounded-xl py-3 mt-5 border-2 2xl:w-1/2 2xl:py-10 hover:bg-orange-500 duration-500'
+                                className='flex items-center justify-center m-auto  w-52 rounded-xl py-2  border-2 lg:mt-4 2xl:w-1/2 2xl:py-10 hover:bg-orange-500 duration-500'
                             >
                                 Sign Up
                             </button>
 
-                                <Link to={'/login'} className='text-center pt-3  font-semibold text-sm  2xl:text-5xl  lg:text-2xl 2xl:pb-6'>Login <span className='text-white underline'>here</span>  </Link>
+                                <Link to={'/login'} className='text-center   font-semibold text-sm  2xl:text-5xl  lg:pt-4  lg:text-xl 2xl:pb-6'>Login <span className='text-white underline'>here</span>  </Link>
 
                         </form>
                     </div>

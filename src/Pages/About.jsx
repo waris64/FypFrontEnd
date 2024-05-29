@@ -41,7 +41,7 @@ const About = () => {
         <h1 className="md:m-auto m-auto md:text-4xl  text-2xl border-b-4 border-orange-500 2xl:font-semibold 2xl:text-6xl">Team Members</h1>
         <div className="flex gap justify-around py-2  px-4  2xl:pb-4 2xl:py-10 ">
           <motion.img
-            src={Mubeen}
+            src={Mubeen}  loading={lazy}
             alt="Profile 1"
             className="size-14  2xl:size-44  rounded-full"
             initial={{ opacity: 0, y: -100 }}
@@ -50,7 +50,7 @@ const About = () => {
             transition={{ type: "tween", duration: 1, delay: 0 }}
           />
           <motion.img
-            src={Waris}
+            src={Waris}  loading={lazy}
             alt="Profile 1"
             className="size-14 2xl:size-44 rounded-full"
             initial={{ opacity: 0, y: -100 }}
@@ -59,7 +59,7 @@ const About = () => {
             transition={{ type: "tween", duration: 1, delay: 0.3 }}
           />
           <motion.img
-            src={Ali}
+            src={Ali} loading={lazy}
             alt="Profile 1"
             className="size-14  2xl:size-44  rounded-full"
             initial={{ opacity: 0, y: -100 }}

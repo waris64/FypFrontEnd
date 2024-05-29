@@ -44,7 +44,7 @@ const Diseases = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <img src={Rec14} className="w-80 sm:p-4 p-4" alt="" />
+          <img src={Rec14}  loading={lazy} className="w-80 sm:p-4 p-4" alt="" />
         </motion.div>
       </section>
 
@@ -58,7 +58,7 @@ const Diseases = () => {
           <h1 className="font-bold text-xl md:text-2xl mb-4 ">
             Citrus <span className="text-orange-500">Greening</span>
           </h1>
-          <img src={Rec19} className="h-72 sm:p-4 p-4" alt="" />
+          <img src={Rec19}  loading={lazy} className="h-72 sm:p-4 p-4" alt="" />
         </div>
         <div className="w-full md:w-1/2 md:pl-8">
           <p className="md:text-base md:leading-loose text-justify pt-6">
@@ -96,7 +96,7 @@ const Diseases = () => {
           </p>
         </div>
         <div>
-          <img src={Rec20} className="w-80 sm:p-4 p-4" alt="" />
+          <img src={Rec20}  loading={lazy} className="w-80 sm:p-4 p-4" alt="" />
         </div>
       </motion.section>
 
@@ -116,7 +116,7 @@ const Diseases = () => {
             <span className="md:text-orange-500 text-orange-500">Tristeza</span>{" "}
             Virus
           </h1>
-          <img src={Rec21} className="h-64 sm:p-4 p-4" alt="" />
+          <img src={Rec21}  loading={lazy} className="h-64 sm:p-4 p-4" alt="" />
         </div>
         <div className="w-full md:w-1/2 md:pl-8">
           <p className="md:text-base md:leading-loose  md:pt-8 ">

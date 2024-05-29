@@ -59,6 +59,7 @@ function SimpleSlider() {
             <div className="image-container">
               <div className=" h-52">
                 <img
+                  loading={lazy}
                   src={Rec14}
                   alt=""
                   className="bg-contain w-full size-52 rounded "
@@ -67,7 +68,7 @@ function SimpleSlider() {
               <div className="text-overlay absolute inset-0 flex items-center ">
                 <div className="md:max-w-[978px] md:mx-auto m-auto">
                   <h1 className="text-white font-bold pt-32 text-2xl underline">Citrus  <label htmlFor="color" className="text-orange-500">Canker</label> </h1>
-                  
+
                 </div>
               </div>
             </div>
@@ -78,6 +79,7 @@ function SimpleSlider() {
             <div className="image-container">
               <div>
                 <img
+                 loading={lazy}
                   src={Rec19}
                   alt=""
                   className="bg-contain w-full size-52 rounded"
@@ -96,6 +98,7 @@ function SimpleSlider() {
             <div className="image-container">
               <div className="">
                 <img
+                 loading={lazy}
                   src={Rec20}
                   alt=""
                   className="bg-contain w-full size-52 rounded"
@@ -114,6 +117,7 @@ function SimpleSlider() {
             <div className="image-container">
               <div className="-80">
                 <img
+                 loading={lazy}
                   src={Rec21}
                   alt=""
                   className="bg-contain w-full size-52 rounded"
