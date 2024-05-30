@@ -126,7 +126,7 @@ const Main = () => {
             (() => {
               switch (diseaseData.prediction) {
                 case 'black-spot':
-                  return <div class="container mx-auto px-4 py-8 shadow-2xl mt-4">
+                  return <div class="container mx-auto px-4 py-8 shadow-2xl mt-4 bg-orange-500 rounded  lg:px-10 ">
                   <h1 class="text-3xl font-bold mb-8 text-center">Black Spot Treatment</h1>
                   <p class="text-lg mb-8">Unfortunately, there is no direct cure for black spot on fruits. However, there are strategies to manage the disease and prevent future outbreaks.</p>
               
