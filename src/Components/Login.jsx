@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import toast from "react-hot-toast";
 import { spiral } from 'ldrs';
 spiral.register();
+import { lazy } from 'react';
 
 const Login = () => {
     const [formData, setFormData] = useState({});

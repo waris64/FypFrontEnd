@@ -1,32 +1,24 @@
 import React from "react";
-import axios from "axios";
-import Chart  from "chart.js/auto";
-import {Bar} from "react-chartjs-2"
+import { Doughnut } from "react-chartjs-2";
 
 const BarChart = ({ diseaseData }) => {
     if (!diseaseData) {
         return null;
     }
 
-    const labels = [diseaseData.prediction];
+    const prediction = diseaseData.prediction;
     const confidence = parseInt(diseaseData.confidence);
+    const remainingConfidence = 100 - confidence;
 
     const data = {
-        labels: labels,
+        labels: [`${diseaseData.prediction}`, "fresh"],
         datasets: [
             {
-                label: diseaseData.prediction,
-                backgroundColor: "rgb(255, 99, 132)",
-                borderColor: "rgb(255, 99, 132)",
-                barThickness: 60,
-                data: [confidence],
-            },
-            {
-                label: "Fresh",
-                backgroundColor: "rgb(255, 99, 32)",
-                borderColor: "rgb(255, 99, 132)",
-                barThickness: 60,
-                data: [100 - confidence],
+                label: 'Confidence',
+                backgroundColor: ['rgb(255, 125, 41)', 'rgb(151, 190, 90)'],
+                borderColor:'rgba(0, 0, 0, 0)',
+                barThickness: 40,
+                data: [confidence, remainingConfidence],
             },
         ],
     };
@@ -38,17 +30,14 @@ const BarChart = ({ diseaseData }) => {
                 position: 'top',
             },
         },
-        
         maintainAspectRatio: false
     };
 
     return (
-        <div className="lg:w-1/2 w-2/4 m-auto">
-            <Bar data={data} options={options} />
+        <div className="lg:w-3/6 lg:h-72 h-52 pt-4 m-auto">
+            <Doughnut data={data} options={options} />
         </div>
     );
 };
 
 export default BarChart;
-
-  

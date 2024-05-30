@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Rectangle from "../assets/Rectangle 10.png";

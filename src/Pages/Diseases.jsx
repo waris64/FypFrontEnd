@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 import "../App.css";
 
 import Nav from "../Components/Nav";
