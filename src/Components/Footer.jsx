@@ -25,7 +25,7 @@ const Footer = () => {
       whileInView={{opacity:1, scale:1}}
       transition={{duration:1}}
       >
-        <label>
+        <label className='border-b-2 border-orange-500'>
           copyright@ 2024 reserved
         </label>
       </motion.div>
@@ -36,10 +36,10 @@ const Footer = () => {
       >
         <h1 className='md:text-2xl text-lg lg:text-2xl'>Contact &nbsp; <span className="text-orange-500">Us</span> </h1>
         <label htmlFor="contact">
-          Phone no : +923479565089
+          <label className=" border-b-2 border-orange-500">Phone no :</label> +923479565089
         </label>  
         <label htmlFor="Email">
-          Email: Citrus@gmail.com
+ <label className="border-b-2 border-orange-500">Email:</label> Citrus@gmail.com
         </label>
         <div className='flex justify-between w-1/2 md:w-3/5 lg:w-full lg:justify-around '>
           <img src={facebook}  loading={lazy} alt=""   className='size-5 lg:size-7'/>

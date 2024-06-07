@@ -26,6 +26,8 @@ const History = () => {
         });
         if (response.status === 200) {
           setHistory(response.data.data.reverse());
+          if(response.data===null)
+            toast.error('No data ');
           setLoading(false);
         }
       } catch (error) {
