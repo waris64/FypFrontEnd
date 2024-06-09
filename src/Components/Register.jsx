@@ -1,12 +1,10 @@
 import React, { lazy, useState } from 'react';
 import { MdEmail, MdLock } from 'react-icons/md';
 import Logo from '../assets/Rectangle 10.png';
-import admin from '../assets/bgadmin.png';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { useAuth } from './AuthProvider';
 import { FaUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
+import { BASE_URL} from "../API.Config"
 
 const Register = () => {
     const [formData, setFormData] = useState({})
@@ -26,7 +24,7 @@ const Register = () => {
         try {
             setLoading(true)
             setErrorMessage(null)
-            const res = await fetch('http://localhost:8080/api/auth/signup', {
+            const res = await fetch(`${BASE_URL}/api/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -126,6 +124,7 @@ const Register = () => {
                             </div>
                             <button
                                 type='submit'
+                                id='submit'
                                 className='flex items-center justify-center m-auto  w-52 rounded-xl py-2  border-2 lg:mt-4 2xl:w-1/2 2xl:py-10 hover:bg-orange-500 duration-500'
                             >
                                 Sign Up

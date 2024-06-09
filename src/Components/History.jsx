@@ -48,7 +48,7 @@ const History = () => {
 
   return (
     <div>
-      <Nav logoSrc={rectangle} />
+      <Nav/>
       <Sidebar />
       <h1 className='text-center font-semibold text-xl py-4 lg:text-4xl lg:py-4'>History </h1>
       <div className='flex flex-col lg:flex-wrap  lg:py-4 lg:px-6   lg:flex-col'>

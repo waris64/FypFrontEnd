@@ -7,7 +7,7 @@ import Sidebar from '../Components/Sidebar'
 const Home = () => {
   return (
     <>
-      <Nav logoSrc={Rectangle}/>
+      <Nav/>
       <Sidebar />
       <Main />
       <Footer />

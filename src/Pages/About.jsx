@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <div className="p-7 md:p-0 about overflow-hidden 2xl:bg-red-50 2xl:py-7 2xl:leading-loose ">
-      <Nav logoSrc={Rectangle} />
+      <Nav/>
       <Sidebar className="bg-red-400" />
       <motion.div
         className="flex flex-col text-center items-center justify-center m-auto md:w-[50vw] overflow-x-hidden md:overflow-x-hidden"

@@ -15,7 +15,7 @@ import { motion } from "framer-motion";
 const Diseases = () => {
   return (
     <div>
-      <Nav logoSrc={Rectangle} />
+      <Nav/>
       <Slick_Slider className="h-[9rem]" />
       <Sidebar className="fixed" />
       <section className="flex flex-col md:flex-row md:justify-around md:items-center md:py-8 p-4 lg:pt-16 lg:items-center -mt-10">
