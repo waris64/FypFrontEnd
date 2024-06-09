@@ -3,7 +3,7 @@ import { MdEmail, MdLock } from 'react-icons/md';
 import Logo from '../assets/Rectangle 10.png';
 import admin from '../assets/bgadmin.png';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import axios for making HTTP requests
+import axios from 'axios';
 import { useAuth } from './AuthProvider';
 import { FaUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
