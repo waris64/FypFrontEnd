@@ -27,7 +27,7 @@ const Login = () => {
         }
         setLoading(true);
         try {
-            const res = await fetch('https://fyp-back-end-tan.vercel.app/api/auth/signin', {
+            const res = await fetch('http://localhost:8080/api/auth/signin', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -118,6 +118,7 @@ const Login = () => {
                         </div>
                         <button
                             type='submit'
+                            id='submit'
                             className='flex items-center justify-center font-semibold m-auto  w-52 rounded-xl py-3 mt-5 border-2 hover:bg-orange-500 duration-500'
                         >
                             Log In

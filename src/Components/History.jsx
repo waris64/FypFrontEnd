@@ -20,24 +20,31 @@ const History = () => {
       try {
         let user = JSON.parse(localStorage.getItem('user'))
         const userId = user.data.user._id
-
-        const response = await axios.get(`https://fyp-back-end-tan.vercel.app/api/records/getuserdata/${userId}`, {
+  
+        const response = await axios.get(`http://localhost:8080/api/records/getuserdata/${userId}`, {
           headers: { 'Content-Type': 'application/json' }
         });
+  
+        setLoading(false);
+  
         if (response.status === 200) {
-          setHistory(response.data.data.reverse());
-          if(response.data===null)
-            toast.error('No data ');
-          setLoading(false);
+          if (response.data.data && response.data.data.length > 0) {
+            setHistory(response.data.data.reverse());
+          } else {
+            alert('No data available')
+          }
+        } else {
+          toast.error('Failed to fetch data');
         }
       } catch (error) {
         setLoading(false);
-        toast.error("Error occurred ", error.response.data.data);
+        toast.error("Error occurred: " + (error.response?.data?.message || error.message));
       }
     };
-
+  
     getDetails();
   }, []);
+  
 
   return (
     <div>
