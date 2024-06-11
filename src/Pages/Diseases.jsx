@@ -6,7 +6,7 @@ import Footer from "../Components/Footer";
 import Slick_Slider from "../Components/Slick_Slider";
 import Rectangle from "../assets/Rectangle 10.png";
 import DiseaseImg from "../assets/Rectangle 12.png";
-import Rec14 from "../assets/Rectangle 14.png";
+import Scab from "../assets/scab.png";
 import Rec19 from "../assets/Rectangle 19.png";
 import Rec20 from "../assets/Rectangle 20.png";
 import Rec21 from "../assets/Rectangle 21.png";
@@ -25,10 +25,10 @@ const Diseases = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="font-bold text-xl pt-14 lg:text-2xl mb-4">
+          <h1 className="font-bold text-xl  pt-14 lg:text-2xl mb-4  2xl:text-6xl">
             <label className="text-orange-500 ">Citrus </label>Canker
           </h1>
-          <p className="md:text-base md:leading-loose text-justify">
+          <p className="md:text-base 2xl:text-4xl md:leading-loose text-justify">
             Citrus greening, scientifically known as Huanglongbing (HLB), is a
             devastating citrus disease that has posed a significant threat to
             citrus crops worldwide. The disease is caused by the bacterium
@@ -44,7 +44,7 @@ const Diseases = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
-          <img src={Rec14}  loading={lazy} className="w-80 sm:p-4 p-4" alt="" />
+          <img src={Scab}  loading={lazy} className="h-64 md:h-64 lg:h-64 2xl:h-96 sm:p-4 p-4" alt="" />
         </motion.div>
       </section>
 
@@ -55,13 +55,13 @@ const Diseases = () => {
         transition={{ duration: 1 }}
       >
         <div>
-          <h1 className="font-bold text-xl md:text-2xl mb-4 ">
+          <h1 className="font-bold text-xl 2xl:text-6xl md:text-2xl mb-4 ">
             Citrus <span className="text-orange-500">Greening</span>
           </h1>
-          <img src={Rec19}  loading={lazy} className="h-72 sm:p-4 p-4" alt="" />
+          <img src={Rec19}  loading={lazy} className="h-64 md:h-64 lg:h-64 2xl:h-96 sm:p-4 p-4" alt="" />
         </div>
         <div className="w-full md:w-1/2 md:pl-8">
-          <p className="md:text-base md:leading-loose text-justify pt-6">
+          <p className="md:text-base md:leading-loose 2xl:text-4xl text-justify pt-6">
             Citrus greening, scientifically known as Huanglongbing (HLB), is a
             devastating citrus disease that has posed a significant threat to
             citrus crops worldwide. The disease is caused by the bacterium
@@ -81,11 +81,11 @@ const Diseases = () => {
         transition={{ duration: 1 }}
       >
         <div className="w-full md:w-1/2 md:pl-8">
-          <h1 className="font-bold text-xl md:text-2xl mb-4">
+          <h1 className="font-bold text-xl  2xl:text-6xl md:text-2xl mb-4">
             Citrus{" "}
-            <span className="md:text-orange-500 text-orange-500">Scab</span>{" "}
+            <span className="md:text-orange-500 2xl:text-6xl text-orange-500">Scab</span>{" "}
           </h1>
-          <p className="md:text-base md:leading-loose text-justify">
+          <p className="md:text-base md:leading-loose text-justify 2xl:text-4xl">
             Citrus Scab, caused by the fungus Elsinoë fawcettii, is a prevalent
             and destructive disease affecting citrus crops worldwide. This
             pathogen primarily targets various citrus species, including
@@ -96,7 +96,7 @@ const Diseases = () => {
           </p>
         </div>
         <div>
-          <img src={Rec20}  loading={lazy} className="w-80 sm:p-4 p-4" alt="" />
+          <img src={Rec20}  loading={lazy} className="h-64 md:h-64 lg:h-64 2xl:h-96 sm:p-4 p-4" alt="" />
         </div>
       </motion.section>
 
@@ -111,15 +111,15 @@ const Diseases = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           animate={{ duration: 1 }}
         >
-          <h1 className="font-bold text-xl md:text-2xl mb-4">
+          <h1 className="font-bold text-xl md:text-2xl mb-4 2xl:text-6xl">
             Citrus{" "}
-            <span className="md:text-orange-500 text-orange-500">Tristeza</span>{" "}
+            <span className="md:text-orange-500 text-orange-500 2xl:text-6xl">Tristeza</span>{" "}
             Virus
           </h1>
-          <img src={Rec21}  loading={lazy} className="h-64 sm:p-4 p-4" alt="" />
+          <img src={Rec21}  loading={lazy} className="h-64 md:h-64 lg:h-64 2xl:h-96 sm:p-4 p-4" alt="" />
         </div>
         <div className="w-full md:w-1/2 md:pl-8">
-          <p className="md:text-base md:leading-loose  md:pt-8 ">
+          <p className="md:text-base md:leading-loose  md:pt-8  2xl:text-4xl">
             Citrus Scab, caused by the fungus Elsinoë fawcettii, is a prevalent
             and destructive disease affecting citrus crops worldwide. This
             pathogen primarily targets various citrus species, including

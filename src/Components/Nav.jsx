@@ -36,13 +36,13 @@ const Nav = () => {
   };
 
   return (
-    <div className="flex justify-center bg-green-950 relative md:py-5 md:flex-row md:justify-around md:text-white lg:items-center lg:justify-start">
+    <div className="flex justify-center 2xl:items-center bg-green-950 relative md:py-4 md:flex-row md:justify-between md:text-white lg:items-center lg:justify-between lg:py-4 xl:justify-between xl:py-2  2xl:py-8 ">
       <motion.img
         animate={{ rotate: 360 }}
         transition={{ repeat: 2, duration: 2, repeatDelay: 1 }}
         src={logo}
         loading={lazy}
-        className="w-12 h-12 absolute top-2 left-2 hidden md:inline"
+        className="w-12 h-12 md:size-8 absolute top-2 left-2 hidden md:inline md:left-4 lg:top-4 lg:h-16 lg:w-16 xl:size-12 2xl:top-10 2xl:ml-16 "
         alt="Logo"
       />
       <div
@@ -51,13 +51,13 @@ const Nav = () => {
         <motion.ul
           initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0 }}
-          className="flex flex-col md:flex-row justify-around items-center md:gap-x-7 md:-ml-28 lg:ml-44 lg:gap-x-10"
+          className="flex flex-col  md:flex-row justify-around items-center md:gap-x-7 md:-ml-36 lg:ml-10 lg:py-3 lg:text-xl lg:gap-x-10   2xl:-ml-36 2xl:text-4xl"
         >
           <motion.li
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
             style={{ x: 1 }}
-            className="mb-2 md:mb-0"
+            className="mb-2 md:mb-0 "
           >
             <Link to="/">Home</Link>
           </motion.li>
@@ -81,19 +81,18 @@ const Nav = () => {
             {isLoggedIn ? (
               <motion.div
                 whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 1 }}
                 className="mb-2 md:mb-0"
                 style={{ x: 1 }}
               >
                 <span onClick={toggleMenu} className="cursor-pointer">
-                  <span className="lg:text-lg">{username}</span>
+                  <span className="lg:text-3xl  lg:pr-4  xl:text-lg  2xl:text-5xl  ">{username}</span>
                 </span>
                 <ul
                   className={`${
                     isOpen ? "block" : "hidden"
                   } absolute mt-2 rounded-md border shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`}
                 >
-                  <li className="block px-4 py-2 text-sm lg:text-lg text-gray-700 hover:bg-gray-100 lg:gap-y-7 font-semibold">
+                  <li className="block px-4 py-2 text-sm lg:text-lg text-gray-700 hover:bg-gray-100 lg:gap-y-7 font-semibold xl:text-xl  xl:py-4 xl:pb-4">
                     <Link to="/" onClick={handleLogout}>
                       Logout
                     </Link>

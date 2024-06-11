@@ -51,7 +51,7 @@ const History = () => {
       <Nav/>
       <Sidebar />
       <h1 className='text-center font-semibold text-xl py-4 lg:text-4xl lg:py-4'>History </h1>
-      <div className='flex flex-col lg:flex-wrap  lg:py-4 lg:px-6   lg:flex-col'>
+      <div className='flex flex-col lg:flex-wrap  lg:py-4 lg:px-6   lg:flex-col '>
         {loading ?
           <div className='text-center lg:py-44 py-44'>
             <l-spiral
@@ -61,7 +61,7 @@ const History = () => {
             ></l-spiral>
           </div>
           :
-          <table className="w-full text-center m-auto items-center">
+          <table className="w-full text-center m-auto items-center text-sm  2xl:text-4xl lg:text-xl">
             <thead className="bg-orange-400 text-white">
               <tr>
                 <th className="p-4">Disease Prediction</th>
