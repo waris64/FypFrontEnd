@@ -7,7 +7,7 @@ import { lazy } from 'react';
 
 const Footer = () => {
   return (
-    <div className=' footer pt-4 bg-green-950 text-white flex flex-col text-sm md:flex-row justify-around p-5 leading-10 overflow-hidden xl:text-2xl xl:py-16'>
+    <div className=' footer pt-4 bg-green-950 text-white flex flex-col text-sm md:flex-row justify-around p-5 leading-10 overflow-hidden xl:text-lg xl:py-5'>
       <motion.div className='mb-4 md:mb-0'
       initial={{opacity:0, x:-100}}
       whileInView={{opacity:1, x:0}}

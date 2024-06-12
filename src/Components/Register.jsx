@@ -4,7 +4,7 @@ import Logo from '../assets/Rectangle 10.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
-import { BASE_URL} from "../API.Config"
+import { BASE_URL_VERCEL} from "../API.Config"
 
 const Register = () => {
     const [formData, setFormData] = useState({})
@@ -24,7 +24,7 @@ const Register = () => {
         try {
             setLoading(true)
             setErrorMessage(null)
-            const res = await fetch(`${BASE_URL}/api/register`, {
+            const res = await fetch(`${BASE_URL_VERCEL}/api/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -55,9 +55,9 @@ const Register = () => {
     return (
         <>
             <div
-                className='lg:flex lg:p-4 lg:justify-between 2xl:  '
+                className='lg:flex lg:p-4 lg:justify-between   '
             >
-                <div className='relative lg:w-full p-3 w-full   bg-contain md:flex md:justify-center md:items-center  '>
+                <div className='relative lg:w-full p-3 w-full   bg-contain md:flex md:justify-center md:items-center xl:w-3/5 xl:h-full '>
                     <div
                         className={`flex flex-col justify-center rounded-3xl text-sm px-5  py-12  shadow-2xl border   bg-[rgb(255,127,62)] md:w-96  lg:w-full  lg:text-xl 2xl:w-full 2xl:py-40 2xl:px-44`}
                      

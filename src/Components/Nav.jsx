@@ -42,7 +42,7 @@ const Nav = () => {
         transition={{ repeat: 2, duration: 2, repeatDelay: 1 }}
         src={logo}
         loading={lazy}
-        className="w-12 h-12 md:size-8 absolute top-2 left-2 hidden md:inline md:left-4 lg:top-4 lg:h-16 lg:w-16 xl:size-12 2xl:top-10 2xl:ml-16 "
+        className="w-12 h-12 md:size-8 absolute top-2 left-2 hidden md:inline md:left-4 lg:top-4 lg:h-16 lg:w-16 xl:size-10  2xl:top-10 2xl:ml-16 "
         alt="Logo"
       />
       <div
@@ -51,7 +51,7 @@ const Nav = () => {
         <motion.ul
           initial={{ opacity: 0, x: 10 }}
           whileInView={{ opacity: 1, x: 0 }}
-          className="flex flex-col  md:flex-row justify-around items-center md:gap-x-7 md:-ml-36 lg:ml-10 lg:py-3 lg:text-xl lg:gap-x-10   2xl:-ml-36 2xl:text-4xl"
+          className="flex flex-col  md:flex-row justify-around items-center md:gap-x-7 md:-ml-36 lg:ml-10 lg:py-3 lg:text-xl lg:gap-x-10 xl:text-lg 2xl:-ml-36 2xl:text-4xl"
         >
           <motion.li
             whileHover={{ scale: 1.2 }}
