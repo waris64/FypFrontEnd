@@ -15,7 +15,7 @@ function SimpleSlider() {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     speed: 1000,
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
