@@ -7,7 +7,7 @@
     import { spiral } from 'ldrs';
     spiral.register();
     import { lazy } from 'react';
-    import { BASE_URL_VERCEL } from "../API.Config"
+    import { VERCEL_BASE_URL } from "../API.Config"
 
     const Login = () => {
         const [formData, setFormData] = useState({});
@@ -28,7 +28,7 @@
             }
             setLoading(true);
             try {
-                const res = await fetch(`${BASE_URL_VERCEL}/api/auth/signin`, {
+                const res = await fetch(`${VERCEL_BASE_URL}/api/auth/signin`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -41,10 +41,10 @@
                     navigate('/');
 
                 } else {
-                    toast.error("Invalid Credentials");
+                    toast.error("Invalid Credentials from frontend else block not catch");
                 }
             } catch (error) {
-                toast.error("Invalid Credentials")
+                toast.error("Invalid Credentials from frontend catch block ")
             }
             finally {
                 setLoading(false);

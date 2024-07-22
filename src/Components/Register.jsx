@@ -4,7 +4,7 @@ import Logo from '../assets/Rectangle 10.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import toast from 'react-hot-toast';
-import { BASE_URL_VERCEL} from "../API.Config"
+import { VERCEL_BASE_URL} from "../API.Config"
 
 const Register = () => {
     const [formData, setFormData] = useState({})
@@ -24,7 +24,7 @@ const Register = () => {
         try {
             setLoading(true)
             setErrorMessage(null)
-            const res = await fetch(`${BASE_URL_VERCEL}/api/register`, {
+            const res = await axios.post0(`${VERCEL_BASE_URL}/api/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
@@ -32,7 +32,7 @@ const Register = () => {
             const data = await res.json()
             if (data.success === false) {
                 if(data.message==="Username is Already taken"){
-                    toast.error=("data.message")
+                    toast.error(`${data.message}`)
                 }else{
                     setErrorMessage(data.message)
                 }

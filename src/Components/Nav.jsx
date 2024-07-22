@@ -54,7 +54,7 @@ const Nav = () => {
           className="flex flex-col  md:flex-row justify-around items-center md:gap-x-7 md:-ml-36 lg:ml-10 lg:py-3 lg:text-xl lg:gap-x-10 xl:text-lg 2xl:-ml-36 2xl:text-4xl"
         >
           <motion.li
-            whileHover={{ scale: 1.2 }}
+            whileHover={{ scale: 1 }}
             whileTap={{ scale: 0.8 }}
             style={{ x: 1 }}
             className="mb-2 md:mb-0 "
@@ -80,7 +80,7 @@ const Nav = () => {
           <div>
             {isLoggedIn ? (
               <motion.div
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1 }}
                 className="mb-2 md:mb-0"
                 style={{ x: 1 }}
               >
@@ -92,7 +92,7 @@ const Nav = () => {
                     isOpen ? "block" : "hidden"
                   } absolute mt-2 rounded-md border shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none`}
                 >
-                  <li className="block px-4 py-2 text-sm lg:text-lg text-gray-700 hover:bg-gray-100 lg:gap-y-7 font-semibold xl:text-xl  xl:py-4 xl:pb-4">
+                  <li className="block px-4 py-2 text-sm lg:text-lg text-gray-700 hover:bg-gray-100 lg:gap-y-7 font-semibold xl:text-lg  xl:py-4">
                     <Link to="/" onClick={handleLogout}>
                       Logout
                     </Link>
@@ -103,7 +103,7 @@ const Nav = () => {
               </motion.div>
             ) : (
               <motion.li
-                whileHover={{ scale: 1.2 }}
+                whileHover={{ scale: 1 }}
                 whileTap={{ scale: 0.8 }}
                 style={{ y: 1 }}
                 className="mb-2 md:mb-0"
