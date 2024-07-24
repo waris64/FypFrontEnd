@@ -4,7 +4,6 @@ import logo from "../assets/Rectangle 10.png";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import { motion } from "framer-motion";
-import "../App.css";
 import axios from "axios";
 import History from "./History";
 

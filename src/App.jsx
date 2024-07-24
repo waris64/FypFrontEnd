@@ -1,5 +1,4 @@
 import React from 'react'
-import './App.css'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Diseases from './Pages/Diseases'
@@ -12,7 +11,7 @@ import History from './Components/History'
 function App() {
   return (
     <BrowserRouter>
-    <AuthProvider>    
+    <AuthProvider app={App}>    
         <Toaster />
       <Routes>
         <Route path='/' element={<Home />} />

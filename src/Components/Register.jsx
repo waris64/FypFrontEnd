@@ -16,41 +16,40 @@ const Register = () => {
         setFormData({ ...formData, [e.target.id]: e.target.value.trim() })
     }
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
         if (!formData.username || !formData.email || !formData.password) {
-            toast.error("Please fill all fields.")
+            return toast.error('Please fill all fields.');
         }
+
         try {
-            setLoading(true)
-            setErrorMessage(null)
-            const res = await axios.post0(`${VERCEL_BASE_URL}/api/register`, {
+            setLoading(true);
+            setErrorMessage(null);
+            const res = await fetch(`${VERCEL_BASE_URL}/auth/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            })
-            const data = await res.json()
-            if (data.success === false) {
-                if(data.message==="Username is Already taken"){
-                    toast.error(`${data.message}`)
-                }else{
-                    setErrorMessage(data.message)
-                }
-                return setErrorMessage(data.message)
-            }
+                body: JSON.stringify(formData),
+            });
+            const data = await res.json();
             if (!res.ok) {
-                toast.error(data.error)
+                if (data.message === 'Username is already taken') {
+                    toast.error(data.message);
+                } else {
+                    setErrorMessage(data.message);
+                    toast.error(data.message);
+                }
+                return;
             }
-            setLoading(false)
-            if (res.ok) {
-                toast.success("Register Successfully.")
-                navigate('/login')
-            }
+            setLoading(false);
+            toast.success('Registered successfully.');
+            navigate('/login');
         } catch (error) {
-            setErrorMessage(error.message)
-            setLoading(false)
+            setErrorMessage(error.message);
+            toast.error(error.message);
+            setLoading(false);
         }
-    }
+    };
 
     return (
         <>
@@ -125,6 +124,7 @@ const Register = () => {
                             <button
                                 type='submit'
                                 id='submit'
+                                onClick={handleSubmit}
                                 className='flex items-center justify-center m-auto  w-52 rounded-xl py-2  border-2 lg:mt-4 2xl:w-1/2 2xl:py-10 hover:bg-orange-500 duration-500'
                             >
                                 Sign Up

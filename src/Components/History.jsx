@@ -7,7 +7,6 @@ import Nav from './Nav';
 import Sidebar from './Sidebar';
 import moment from 'moment';
 import { spiral } from 'ldrs';
-import '../App.css';
 spiral.register();
 
 const History = () => {
