@@ -36,7 +36,7 @@ const Footer = () => {
       >
         <h1 className='md:text-2xl text-lg lg:text-2xl xl:text-2xl xl:pb-4'>Contact &nbsp; <span className="text-orange-500">Us</span> </h1>
         <label htmlFor="contact">
-          <label className=" border-b-2 border-orange-500">Phone no :</label> +923479565089
+          <label className=" border-b-2 border-orange-500">Phone no :</label> +923186157770
         </label>  
         <label htmlFor="Email">
  <label className="border-b-2 border-orange-500">Email:</label> Citrus@gmail.com
